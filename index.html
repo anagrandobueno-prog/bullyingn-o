@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conscientização sobre Bullying - Diga Não ao Bullying</title>
+    <title>Conscientização sobre Bullying - Pare o Bullying</title>
     <style>
         * {
             margin: 0;
@@ -14,21 +14,21 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background: #0a0a0a;
+            color: #e0e0e0;
         }
 
         /* Header */
         .header {
-            background: rgba(0, 0, 0, 0.85);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 20px rgba(212, 175, 55, 0.2);
+            border-bottom: 2px solid #d4af37;
         }
 
         .nav-container {
@@ -43,7 +43,8 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #ff6b6b;
+            color: #d4af37;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
         .nav-links {
@@ -59,7 +60,7 @@
         }
 
         .nav-links a:hover {
-            color: #ff6b6b;
+            color: #d4af37;
         }
 
         /* Main Container */
@@ -69,21 +70,25 @@
             padding: 2rem;
         }
 
-        /* Hero Section */
+        /* Hero Section com Imagem */
         .hero {
-            background: linear-gradient(135deg, rgba(255,107,107,0.9), rgba(255,107,107,0.7));
+            background: linear-gradient(135deg, rgba(26,26,46,0.95), rgba(22,19,62,0.95)), url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             border-radius: 20px;
             padding: 4rem 2rem;
             text-align: center;
             margin-bottom: 3rem;
             color: white;
             animation: fadeInUp 0.8s ease-out;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #d4af37;
         }
 
         .hero p {
@@ -97,7 +102,7 @@
             text-align: center;
             font-size: 2rem;
             margin-bottom: 2rem;
-            color: white;
+            color: #d4af37;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
@@ -109,23 +114,21 @@
         }
 
         .card {
-            background: white;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeInUp 0.8s ease-out;
             animation-fill-mode: both;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
         }
-
-        .card:nth-child(1) { animation-delay: 0.1s; }
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.3s; }
 
         .card-icon {
             font-size: 3rem;
@@ -133,50 +136,119 @@
         }
 
         .card h3 {
-            color: #ff6b6b;
+            color: #d4af37;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
         .card p {
-            color: #666;
+            color: #b0b0b0;
             line-height: 1.6;
         }
 
-        /* Types Section */
+        /* Types Section com Imagens */
         .types-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
 
         .type-item {
-            background: white;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             border-radius: 10px;
             padding: 1.5rem;
-            border-left: 4px solid #ff6b6b;
+            border-left: 4px solid #d4af37;
             transition: all 0.3s;
+            overflow: hidden;
         }
 
         .type-item:hover {
             transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .type-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
 
         .type-item h4 {
-            color: #ff6b6b;
+            color: #d4af37;
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
 
+        /* Quiz Section */
+        .quiz-section {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+
+        .quiz-question p {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #d4af37;
+        }
+
+        .quiz-options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .quiz-btn {
+            background: #0a0a0a;
+            color: white;
+            border: 1px solid #d4af37;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quiz-btn:hover {
+            background: #d4af37;
+            color: #0a0a0a;
+        }
+
+        .quiz-feedback {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .quiz-feedback.correct {
+            color: #4caf50;
+            display: block;
+        }
+
+        .quiz-feedback.wrong {
+            color: #f44336;
+            display: block;
+        }
+
         /* Statistics */
         .statistics {
-            background: white;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 3rem;
             text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .stats-container {
@@ -193,23 +265,26 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #ff6b6b;
+            color: #d4af37;
             display: block;
         }
 
         .stat-label {
-            color: #666;
+            color: #b0b0b0;
             margin-top: 0.5rem;
         }
 
-        /* Help Section */
+        /* Help Section com Imagem */
         .help-section {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, rgba(26,26,46,0.95), rgba(22,19,62,0.95)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             border-radius: 20px;
             padding: 3rem;
             color: white;
             text-align: center;
             margin-bottom: 3rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .help-buttons {
@@ -232,33 +307,37 @@
         }
 
         .btn-primary {
-            background: #ff6b6b;
-            color: white;
+            background: #d4af37;
+            color: #0a0a0a;
+            font-weight: bold;
         }
 
         .btn-primary:hover {
-            background: #ff5252;
+            background: #ffd700;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
 
         .btn-secondary {
-            background: white;
-            color: #ff6b6b;
+            background: #1a1a2e;
+            color: #d4af37;
+            border: 1px solid #d4af37;
         }
 
         .btn-secondary:hover {
-            background: #f0f0f0;
+            background: #d4af37;
+            color: #0a0a0a;
             transform: translateY(-2px);
         }
 
         /* Footer */
         .footer {
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
+            background: #0a0a0a;
+            color: #b0b0b0;
             text-align: center;
             padding: 2rem;
             margin-top: 2rem;
+            border-top: 2px solid #d4af37;
         }
 
         /* Modal */
@@ -269,24 +348,25 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.9);
             z-index: 2000;
             justify-content: center;
             align-items: center;
         }
 
         .modal-content {
-            background: white;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             border-radius: 20px;
             padding: 2rem;
             max-width: 500px;
             width: 90%;
             text-align: center;
             animation: slideIn 0.3s ease-out;
+            border: 1px solid #d4af37;
         }
 
         .modal-content h3 {
-            color: #ff6b6b;
+            color: #d4af37;
             margin-bottom: 1rem;
         }
 
@@ -295,9 +375,11 @@
             width: 100%;
             padding: 0.8rem;
             margin: 0.5rem 0;
-            border: 1px solid #ddd;
+            border: 1px solid #d4af37;
             border-radius: 5px;
             font-family: inherit;
+            background: #0a0a0a;
+            color: white;
         }
 
         .modal-content textarea {
@@ -309,14 +391,14 @@
             float: right;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #999;
+            color: #d4af37;
         }
 
         .close-modal:hover {
-            color: #333;
+            color: #ffd700;
         }
 
-        /* Animations */
+        /* Animações */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -363,10 +445,11 @@
 <body>
     <header class="header">
         <nav class="nav-container">
-            <div class="logo">🤝 Stop Bullying</div>
+            <div class="logo">👑 Stop Bullying</div>
             <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#tipos">Tipos</a></li>
+                <li><a href="#quiz">Quiz</a></li>
                 <li><a href="#ajuda">Ajuda</a></li>
                 <li><a href="#" onclick="openModal()">Denunciar</a></li>
             </ul>
@@ -376,7 +459,7 @@
     <main class="container" id="home">
         <section class="hero">
             <h1>Diga NÃO ao Bullying</h1>
-            <p>Juntos podemos criar um ambiente mais seguro e respeitoso para todos. Bullying não é brincadeira, é crime!</p>
+            <p>Juntos podemos criar um ambiente mais seguro e respeitoso para todos. Bullying não é brincadeira, é crime! Sua voz importa.</p>
         </section>
 
         <h2 class="section-title">O que é Bullying?</h2>
@@ -401,33 +484,80 @@
         <h2 class="section-title" id="tipos">Tipos de Bullying</h2>
         <div class="types-grid">
             <div class="type-item">
+                <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bullying Verbal" class="type-image">
                 <h4>📝 Verbal</h4>
                 <p>Apelidos pejorativos, xingamentos, insultos, comentários racistas, homofóbicos ou ofensivos.</p>
             </div>
             <div class="type-item">
+                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bullying Físico" class="type-image">
                 <h4>👊 Físico</h4>
                 <p>Bater, chutar, empurrar, socar, puxar cabelo, danificar pertences e agressões físicas.</p>
             </div>
             <div class="type-item">
-                <h4>😢 Psicológico</h4>
-                <p>Chantagem, manipulação, isolamento social, humilhação, perseguição e ameaças.</p>
-            </div>
-            <div class="type-item">
+                <img src="https://images.unsplash.com/photo-1544717305-38a914f2b24f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cyberbullying" class="type-image">
                 <h4>💻 Cyberbullying</h4>
                 <p>Agressões por meios digitais: redes sociais, e-mails, mensagens, compartilhamento de fotos íntimas sem consentimento.</p>
             </div>
             <div class="type-item">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bullying Social" class="type-image">
                 <h4>📱 Social</h4>
                 <p>Exclusão proposital, espalhar boatos, ignorar deliberadamente, formar grupos de exclusão.</p>
             </div>
-            <div class="type-item">
-                <h4>💼 Sexual</h4>
-                <p>Comentários libidinosos, assédio, toques inadequados, compartilhamento de conteúdo pornográfico não consentido.</p>
+        </div>
+
+        <h2 class="section-title" id="quiz">🎯 Quiz: Você sabe identificar o Bullying?</h2>
+        <div class="quiz-section">
+            <div class="quiz-question">
+                <p>1. João é chamado repetidamente de "quatro olhos" por seus colegas na escola. Isso é considerado bullying?</p>
+                <div class="quiz-options">
+                    <button class="quiz-btn" onclick="checkAnswer(this, true, 1)">Sim, é bullying verbal</button>
+                    <button class="quiz-btn" onclick="checkAnswer(this, false, 1)">Não, é só uma brincadeira</button>
+                </div>
+                <div class="quiz-feedback" id="feedback1"></div>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. Maria está sendo excluída propositalmente do grupo de amigos e ninguém quer sentar perto dela. Isso é bullying?</p>
+                <div class="quiz-options">
+                    <button class="quiz-btn" onclick="checkAnswer(this, true, 2)">Sim, é bullying social</button>
+                    <button class="quiz-btn" onclick="checkAnswer(this, false, 2)">Não, ela só é tímida</button>
+                </div>
+                <div class="quiz-feedback" id="feedback2"></div>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. Pedro recebe mensagens ofensivas e ameaças por redes sociais todos os dias. Isso se enquadra em qual tipo?</p>
+                <div class="quiz-options">
+                    <button class="quiz-btn" onclick="checkAnswer(this, true, 3)">Cyberbullying</button>
+                    <button class="quiz-btn" onclick="checkAnswer(this, false, 3)">Bullying físico</button>
+                    <button class="quiz-btn" onclick="checkAnswer(this, false, 3)">É apenas uma brincadeira online</button>
+                </div>
+                <div class="quiz-feedback" id="feedback3"></div>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. O que você deve fazer se testemunhar um caso de bullying?</p>
+                <div class="quiz-options">
+                    <button class="quiz-btn" onclick="checkAnswer(this, true, 4)">Denunciar para um adulto responsável</button>
+                    <button class="quiz-btn" onclick="checkAnswer(this, false, 4)">Ignorar e seguir em frente</button>
+                    <button class="quiz-btn" onclick="checkAnswer(this, false, 4)">Participar para não ser excluído</button>
+                </div>
+                <div class="quiz-feedback" id="feedback4"></div>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. O bullying pode causar quais consequências na vítima?</p>
+                <div class="quiz-options">
+                    <button class="quiz-btn" onclick="checkAnswer(this, true, 5)">Depressão, ansiedade e baixa autoestima</button>
+                    <button class="quiz-btn" onclick="checkAnswer(this, false, 5)">Apenas tristeza temporária</button>
+                    <button class="quiz-btn" onclick="checkAnswer(this, false, 5)">Nenhuma consequência séria</button>
+                </div>
+                <div class="quiz-feedback" id="feedback5"></div>
             </div>
         </div>
 
         <div class="statistics">
-            <h2 style="color: #ff6b6b; margin-bottom: 1rem;">Dados Alarmantes</h2>
+            <h2 style="color: #d4af37; margin-bottom: 1rem;">Dados Alarmantes</h2>
             <div class="stats-container">
                 <div class="stat-item">
                     <span class="stat-number">43%</span>
@@ -450,7 +580,7 @@
 
         <div class="help-section" id="ajuda">
             <h2>Precisa de Ajuda?</h2>
-            <p>Se você está sofrendo bullying ou conhece alguém que está, não fique calado! Existem diversos canais de ajuda disponíveis.</p>
+            <p>Se você está sofrendo bullying ou conhece alguém que está, não fique calado! Existem diversos canais de ajuda disponíveis. Você não está sozinho!</p>
             <div class="help-buttons">
                 <a href="#" class="btn btn-primary" onclick="openModal()">📢 Denunciar Agora</a>
                 <a href="#" class="btn btn-secondary" onclick="showPhoneNumbers()">📞 Telefones Úteis</a>
@@ -462,6 +592,7 @@
     <footer class="footer">
         <p>© 2024 Stop Bullying - Campanha de Conscientização</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Juntos podemos fazer a diferença! 💙</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">#DigaNãoAoBullying #RespeitoÉLei</p>
     </footer>
 
     <!-- Modal -->
@@ -469,7 +600,7 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h3>Denúncia Anônima</h3>
-            <p style="color: #666; margin-bottom: 1rem;">Sua identidade será mantida em sigilo.</p>
+            <p style="color: #b0b0b0; margin-bottom: 1rem;">Sua identidade será mantida em sigilo. Juntos contra o bullying!</p>
             <input type="text" placeholder="Seu nome (opcional)" id="name">
             <input type="email" placeholder="Seu e-mail (opcional)" id="email">
             <textarea placeholder="Descreva o que está acontecendo..." id="description"></textarea>
@@ -478,6 +609,47 @@
     </div>
 
     <script>
+        let score = 0;
+        const answered = {};
+
+        function checkAnswer(button, isCorrect, questionId) {
+            if (answered[questionId]) {
+                alert('Você já respondeu esta pergunta!');
+                return;
+            }
+            
+            answered[questionId] = true;
+            const feedbackDiv = document.getElementById(`feedback${questionId}`);
+            
+            if (isCorrect) {
+                feedbackDiv.textContent = '✅ Correto! Muito bem!';
+                feedbackDiv.className = 'quiz-feedback correct';
+                score++;
+            } else {
+                feedbackDiv.textContent = '❌ Incorreto. Reflita sobre a resposta correta.';
+                feedbackDiv.className = 'quiz-feedback wrong';
+            }
+            
+            button.style.opacity = '0.6';
+            button.style.cursor = 'default';
+            
+            // Verificar se todas as perguntas foram respondidas
+            if (Object.keys(answered).length === 5) {
+                setTimeout(() => {
+                    let message = `🎉 Parabéns! Você completou o quiz!\n\n`;
+                    message += `Sua pontuação: ${score}/5\n\n`;
+                    if (score === 5) {
+                        message += `Excelente! Você é muito consciente sobre o bullying! 🌟`;
+                    } else if (score >= 3) {
+                        message += `Bom trabalho! Continue aprendendo sobre o assunto! 💪`;
+                    } else {
+                        message += `Que tal revisar o conteúdo e tentar novamente? Você pode fazer a diferença! 📚`;
+                    }
+                    alert(message);
+                }, 500);
+            }
+        }
+
         function openModal() {
             document.getElementById('modal').style.display = 'flex';
         }
@@ -496,16 +668,16 @@
                 return;
             }
             
-            alert('Denúncia enviada com sucesso! Entraremos em contato em breve.\n\nLembre-se: Você não está sozinho(a)!');
+            alert('✅ Denúncia enviada com sucesso! Entraremos em contato em breve.\n\nLembre-se: Você não está sozinho(a)! Sua coragem faz a diferença.');
             closeModal();
         }
 
         function showPhoneNumbers() {
-            alert('📞 Telefones Úteis:\n\n• Disque 100 - Direitos Humanos\n• Disque 180 - Central de Atendimento à Mulher\n• CVV - 188 (Centro de Valorização da Vida)\n• Conselho Tutelar da sua cidade\n• Polícia Militar - 190\n\nNão hesite em ligar!');
+            alert('📞 Telefones Úteis:\n\n• Disque 100 - Direitos Humanos\n• Disque 180 - Central de Atendimento à Mulher\n• CVV - 188 (Centro de Valorização da Vida)\n• Conselho Tutelar da sua cidade\n• Polícia Militar - 190\n\nNão hesite em ligar! Sua vida importa.');
         }
 
         function showTips() {
-            alert('💡 Dicas importantes:\n\n1️⃣ Conte para um adulto de confiança (pais, professores, direção)\n2️⃣ Não revide - isso pode piorar a situação\n3️⃣ Mantenha provas (mensagens, prints, testemunhas)\n4️⃣ Procure apoio psicológico\n5️⃣ Denuncie nas autoridades competentes\n6️⃣ Nunca se isole - mantenha amigos por perto\n7️⃣ Pratique autoconfiança e autoestima\n\nVocê merece respeito!');
+            alert('💡 Dicas importantes:\n\n1️⃣ Conte para um adulto de confiança (pais, professores, direção)\n2️⃣ Não revide - isso pode piorar a situação\n3️⃣ Mantenha provas (mensagens, prints, testemunhas)\n4️⃣ Procure apoio psicológico\n5️⃣ Denuncie nas autoridades competentes\n6️⃣ Nunca se isole - mantenha amigos por perto\n7️⃣ Pratique autoconfiança e autoestima\n8️⃣ Bloqueie agressores nas redes sociais\n\nVocê merece respeito e dignidade! 💜');
         }
 
         // Fechar modal clicando fora
